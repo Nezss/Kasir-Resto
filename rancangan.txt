@@ -1,0 +1,74 @@
+-- Membuat database
+CREATE DATABASE IF NOT EXISTS restoran;
+USE restoran;
+-- Tabel users
+CREATE TABLE users(
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	username VARCHAR(255) UNIQUE,
+	password VARCHAR(255) ,
+	email VARCHAR(255),
+	role ENUM(admin,user) DEAFULT user
+);
+
+bayu
+
+
+
+
+
+
+
+
+
+
+
+Fitur
+1.	Login
+Buat view Login Dimana isinya:
+a.	textField (txtUsername)
+b.	passwordField (txtPassword)
+c.	jButton (btnLogin)
+d.	jButton (btnDaftar)
+-	btnLogin akan diteruskan ke view dashboard
+-	btnDaftar akan diteruskan ke view daftar
+2.	Daftar
+Berisi :
+a.	textField (txtUsername)
+b.	passwordField (txtPassword)
+c.	jButton (btnDaftar)
+d.	jButton (btnLogin)
+-	btnDaftar akan melakukan query membuat akun admin kemudian redirect lagi ke login view
+-	btnLogin akan diteruskan Kembali ke view login
+3.	Dashboard
+Halaman menggunakan jTabbedPane berisi
+1.	jPanel (pnlWelcome)
+2.	jPanel (pnlMenu)
+3.	jPanel (pnlPelanggan)
+4.	jPanel (pnlTransaksi)
+5.	jPanel (pnlLaporan)
+
+4.	Welcome page
+Berisi hanya label yang bertuliskan welocome dan username yang login
+
+5.	Menu Page
+Berisi:
+a.	textField (txtNamaMenu)
+b.	jComboBox (cmbKategori)
+c.	textField (txtHarga)
+d.	jButton (btnCreate)
+e.	txtField (txtFindNama)
+f.	jButton (btnFindNama)
+g.	jTable (tblMenu)
+h.	jButton (btnUpdate)
+i.	jButton (btnDelete)
+-	btnCreate akan mendaptkan data dari txtNamaMenu, cmbKategori,txtHarga kemudian melakukan query INSERT ke table menu, jangan lupa kasih validasi agar semua data terisi dan txtHarga berisi angka
+-	btnFindNama akan mendapatkan string/data dari txtFindNama kemudian melakukan query SELECT ke table menu Berdasarkan nama_menu, jika ada maka akan disimpan dalam bentuk objek/array dan ditampilkan ke table
+-	btnUpdate akan melakukan query Update table menu berdasarkan Row id. Jika berhasil kosongkan table
+-	btnDelete akan melakukan query Delete table menu berdasarkan Row id. Jika berhasil kosongkan table
+-	jangan lupa berikan JOptionPane Ketika Berhasil/Gagal melakukan CRUD
+
+5. Pelanggan Page
+
+sama seperti Menu page tapi backendnya beda
+
+6. Transaksi Page
